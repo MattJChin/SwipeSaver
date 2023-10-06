@@ -96,44 +96,36 @@
             height:20px;
         }
 
-        .commons-container {
+        .dining-halls-container {
+            postion; relative;
             display: flex;
-            position: relative;
             background-color: var(--primary-color);
-            text-align: center;
         }
 
-        .commons-container img{
+        .image-container {
+            position: relative;
+        }
+
+        .dining-halls-container img{
             width: 600px;
-            height: 400px;
+            height: 500px;
             display: block;
             postion: relative;
             margin-left:100px;
-
         }
 
-        .overlay-box {
+        .title-overlay {
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(228, 30, 30);
-            z-index: -1;
-        }
-
-        .panel {
-            font-family: Verdana, sans-serif;
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            width: 92.5%;
-            border: none;
-            outline: none;
-            margin: 0px 20px 0px 20px;
-            transition: max-height 0.2s ease-out;
-        }
+            left: 100px;
+            width: 600px;
+            height: 15%; 
+            background-color: rgb(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
 
         .footer {
             position: fixed;
@@ -151,45 +143,12 @@
         .footer p {
             color: white;
         }
-        
-        .accordion {
-            background-color: #eee;
-            font-family: Verdana, sans-serif;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 90%;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: left;
-            margin: 20px 20px 10px 64px;
-            border: none;
-            outline: none;
-            transition: 0.4s;
-        }
-
-        .active, .accordion:hover {
-            background-color: #ccc;
-        }
-
-        .accordion:after {
-            content: '\02795'; /* Unicode character for "plus" sign (+) */
-            font-size: 13px;
-            color: #777;
-            float: right;
-            margin-left: 5px;
-        }
-
-        .active:after {
-            content: "\2796"; /* Unicode character for "minus" sign (-) */
-        }
 
     </style>
 </head>
 <body style="background-color: whitesmoke;">
     
     <div class="header-container">
-        <div class="overlay-box"></div>
         <img src="{% static 'newLogo.png' %}" alt="SwipeSaver">
         <h1>RPI SwipeSaver</h1>
     </div>
@@ -223,19 +182,38 @@
     {% comment %} <div id="output" style="text-align: center; margin: 20px;"></div> {% endcomment %}
     <div class="red-box"></div>
 
-    <div class="commons-container">
-        <div class="overlay-box"></div>
-        <img src="{% static 'commons.png' %}" alt="Commons">
-        <img src="{% static 'sage.jpg' %}" alt="Commons">
+    <div class="dining-halls-container">
+        <div class="image-container">
+            <img src="{% static 'commons.jpg' %}" alt="Commons">
+            <div class="title-overlay">
+                <p>Commons</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'sage.png' %}" alt="Sage">
+            <div class="title-overlay">
+                <p>Sage</p>
+            </div>
+        </div>
     </div>
 
-        <div class="red-box"></div>
+    <div class="red-box"></div>
 
-    <div class="commons-container">
-        <div class="overlay-box"></div>
-        <img src="{% static 'commons.png' %}" alt="Commons">
-        <img src="{% static 'sage.jpg' %}" alt="Commons">
+    <div class="dining-halls-container">
+        <div class="image-container">
+            <img src="{% static 'commons.jpg' %}" alt="Commons">
+            <div class="title-overlay">
+                <p>Blitman</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{% static 'sage.png' %}" alt="Sage">
+            <div class="title-overlay">
+                <p>BARH</p>
+            </div>
+        </div>
     </div>
+
     <div class="footer">
         <p>An RCOS project</p>
     </div>
